@@ -1,0 +1,66 @@
+TipoUsuario: (Apenas administradores) *
+	-Id // long
+	-Titulo // string
+
+Usuario: *
+	-Id // long
+	-Nome // string
+	-Email // string
+	-Senha // string
+	-TipoUsuarioId // long
+
+Telefone: *
+	-Id // long
+	-Numero // string
+	-NomesDonos // string
+
+Contato:
+	-Id // long
+	-Telefones // List<Telefone>
+	-ClienteId
+
+Endereco: *
+	-Id // long
+	-Descricao // string
+	-ClienteId
+
+Cliente:
+	-Id // long
+	-NomeRazaoSocial // string
+	-CapacidadeFreezerEmPacotes // uint
+
+NotaFiscalCondicao:
+	-Id // long
+	-Descricao // string
+	-EmitirNF // bool
+	-ClienteId
+
+BoletoCondicao:
+	-Id // long
+	-Descricao // string
+	-ClienteId
+
+Produto:
+	-Id // long
+	-NomeProduto // string
+
+ProdutoPorCliente:
+	-Id // long
+	-ValorNegociado // decimal
+	-Atual // bool
+	-ProdutoId // long
+	-ClienteId // long
+
+
+		
+		EXTRAS:
+Pedido:
+	-Id // long
+	-DataPedido // DateTime
+	-ProdutoPorClienteId // long
+
+
+
+Legenda: Asteriscos se referem à tabelas que não
+estão no EXCEL, mas que precisam ser implementados
+no banco de dados.
