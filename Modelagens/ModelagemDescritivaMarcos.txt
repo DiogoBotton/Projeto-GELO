@@ -9,14 +9,10 @@ Usuario: *
 	-Senha // string
 	-TipoUsuarioId // long
 
-Telefone: *
-	-Id // long
-	-Numero // string
-	-NomesDonos // string
-
 Contato:
 	-Id // long
-	-Telefones // List<Telefone>
+	-Telefone // string
+	-NomesDonos // string
 	-ClienteId
 
 Endereco: *

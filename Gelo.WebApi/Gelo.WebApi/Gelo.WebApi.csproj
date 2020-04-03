@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Infraestructure\EntityTypeConfigurations\" />
+    <Compile Remove="Migrations\20200330235931_ContextGeloDB.cs" />
+    <Compile Remove="Migrations\20200330235931_ContextGeloDB.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

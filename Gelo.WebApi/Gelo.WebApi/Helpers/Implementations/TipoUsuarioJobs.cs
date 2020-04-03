@@ -31,9 +31,10 @@ namespace Gelo.WebApi.Helpers.Implementations
                     tipoUsuarioDb = new TipoUsuario(status);
 
                     _tipoUsuarioRepository.Create(tipoUsuarioDb);
-                    await _tipoUsuarioRepository.UnitOfWork.SaveDbChanges();
                 }
             }
+
+            await _tipoUsuarioRepository.UnitOfWork.SaveDbChanges();
         }
     }
 }

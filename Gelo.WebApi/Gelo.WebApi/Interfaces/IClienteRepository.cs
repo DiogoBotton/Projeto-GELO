@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gelo.WebApi.Interfaces
 {
-    interface IClienteRepository : IRepository<Cliente>
+    public interface IClienteRepository : IRepository<Cliente>
     {
         List<Cliente> ImportarClientesExcel(IFormFile file);
     }

@@ -32,6 +32,7 @@ namespace Gelo.WebApi
             //Em outras palavras, você pode usar a implementação dos métodos do repository, apenas instanciando... A interface! loucura neh? Foi o que eu pensei também!
             services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
 
             /* 
              **Configuração BD**

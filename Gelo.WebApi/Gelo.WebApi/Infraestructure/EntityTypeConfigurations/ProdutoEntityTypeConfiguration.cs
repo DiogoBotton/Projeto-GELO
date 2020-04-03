@@ -8,16 +8,14 @@ using System.Threading.Tasks;
 
 namespace Gelo.WebApi.Infraestructure.EntityTypeConfigurations
 {
-    public class TipoUsuarioEntityTypeConfiguration : IEntityTypeConfiguration<TipoUsuario>
+    public class ProdutoEntityTypeConfiguration : IEntityTypeConfiguration<Produto>
     {
-        public void Configure(EntityTypeBuilder<TipoUsuario> builder)
+        public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            builder.ToTable("TiposUsuarios");
-
-            builder.Property(x => x.Id).IsRequired();
             builder.HasKey(x => x.Id);
-
-            builder.Property(x => x.Titulo).IsRequired();
+            builder.Property(x => x.Id).IsRequired();
+            
+            builder.Property(x => x.NomeProduto).IsRequired();
         }
     }
 }

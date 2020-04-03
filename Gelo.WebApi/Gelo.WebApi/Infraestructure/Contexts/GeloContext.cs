@@ -1,5 +1,5 @@
 ﻿using Gelo.WebApi.Domains;
-using Gelo.WebApi.Infraestructure.EntityTypeConfiguration;
+using Gelo.WebApi.Infraestructure.EntityTypeConfigurations;
 using Gelo.WebApi.SeedWork;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +16,11 @@ namespace Gelo.WebApi.Infraestructure.Contexts
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<NotaFiscalCondicao> NotasFiscaisCondicoes { get; set; }
+        public DbSet<BoletoCondicao> BoletosCondicoes { get; set; }
+        public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<ProdutoPorCliente> ProdutosPorClientes { get; set; }
 
         public GeloContext(DbContextOptions<GeloContext> options) : base(options)
         {
@@ -26,6 +31,13 @@ namespace Gelo.WebApi.Infraestructure.Contexts
             //Classes mapeadoras
             modelBuilder.ApplyConfiguration(new UsuarioEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new TipoUsuarioEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new BoletoCondicaoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new NotaFiscalCondicaoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ContatoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new EnderecoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoPorClienteEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ClienteEntityTypeConfiguration());
 
             //Caso houver uma referencia de 2 Foreign Key's para uma mesma tabela, o loop altera o comportamento de Cascata para Restrito
             //[...] automaticamente ao fazer a migration

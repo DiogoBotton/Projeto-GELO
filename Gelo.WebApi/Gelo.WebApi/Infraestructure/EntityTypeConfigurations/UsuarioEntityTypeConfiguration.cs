@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gelo.WebApi.Infraestructure.EntityTypeConfiguration
+namespace Gelo.WebApi.Infraestructure.EntityTypeConfigurations
 {
     public class UsuarioEntityTypeConfiguration : IEntityTypeConfiguration<Usuario>
     {
